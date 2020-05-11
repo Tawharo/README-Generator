@@ -6,87 +6,67 @@ const fs  = require('fs');
 const questions = [
     {
        type: "input",
-       name: "githubUsername",
+       name: "github",
        message: "What is your Github username?"
-
     },
-
     {
       type: "input",
       name: "userEmail",
       message: "What is your e-mail address?"
-
    },
-
+   {
+       type: "input",
+       name: "URL to project",
+       message: "What is the URL to your aopplication?"
+   },
     {
         type: "input",
         name: "title",
-        message: "What is the name of your app?"
- 
+        message: "What is the name of your application?"
      },
-
      {
       type: "input",
       name: "projectDescription",
-      message: "Provide a description of the application"
-
+      message: "Please write a description of the application"
    },
-
+   {
+    type: "input",
+    name: "tableOfContents",
+    message: "What is your Table of Contents?"
+ },
+   {
+       type: "list",
+       name: "license",
+       message: "What kind of license should your application have?",
+       choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+   },
      {
         type: "input",
-        name: "appInstall",
-        message: "How do you install the app?"
- 
+        name: "installation",
+        message: "What command should be run to install the application?",
+        default: "npm i"
      },
-
      {
-      type: "input",
-      name: "tableOfContents",
-      message: "What is your Table of Contents?"
-
-   },
-
+         type: "input",
+         name: "test",
+         message: "What command should be run to run tests to your application?",
+         default: "npm test"
+     },
    {
       type: "input",
       name: "usage",
-      message: "How is the app used?"
-
+      message: "How is the application used?"
    },
-   
-   {
-      type: "checkbox",
-      name: "badgeChoice",
-      message: "Which license would you like?",
-      choices: [
-         "ISC",
-         "MIT"
-      ]
-
-   },
-
-
    {
       type: "input",
       name: "contributing",
-      message: "How can other developers contribute to the app?"
-
+      message: "How can other developers contribute to the application?"
    },
-
-
-   {
-      type: "input",
-      name: "tests",
-      message: "What tests are run to resolve bugs/issues?"
-
-   },
-
    {
       type: "input",
       name: "questions",
       message: "How can users report issues or ask questions?"
-
    }
-
 ];
 
 function createBadge(license) {
