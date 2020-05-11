@@ -4,7 +4,7 @@ function generateMarkdown(data) {
     const badgeHTTPOne = `[![License: ${data.badgeChoice}](https://img.shields.io/badge/License-${data.badgeChoice}-blue.svg)](https://opensource.org/licenses/${data.badgeChoice})`;
     const badgeHTTP = `
      https://img.shields.io/github/license/${data.githubUsername}/${repoName}`;
-      return `
+    return `
     ## Badge 
       ${badgeHTTPOne}
     ## Title
@@ -28,14 +28,13 @@ function generateMarkdown(data) {
         - ${profilePic}
       * ${data.questions}
       * Username
-        - ${data.githubUsername}
+        - ${data.github}
       * E-mail Address
         - ${data.userEmail}
     ## Badge
       * ${badgeHTTP}
     `
-    ;
-    }
-    
-    module.exports = generateMarkdown;
-      
+        ;
+}
+
+module.exports = generateMarkdown;
